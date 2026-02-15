@@ -1,0 +1,14 @@
+{
+  "name": "unit-test-generator",
+  "private": true,
+  "description": "Unit Test Generator — React Vite frontend, Node.js backend, Gemini API",
+  "scripts": {
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}

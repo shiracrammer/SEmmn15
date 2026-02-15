@@ -86,3 +86,28 @@ The generated output is **Vitest** test code; the app does not run tests — the
 ---
 
 Full architecture details: [docs/phase2-architecture.md](docs/phase2-architecture.md).
+
+---
+
+## Phase 3: Key Files
+
+| File Name | Description |
+|-----------|-------------|
+| [server/index.js](server/index.js) | Express app entry point; CORS, JSON body, and `POST /api/generate-tests` route. |
+| [server/routes/generateTests.js](server/routes/generateTests.js) | Handler for `POST /api/generate-tests`; delegates to Gemini service and returns JSON. |
+| [server/services/geminiService.js](server/services/geminiService.js) | Gemini API client; builds prompt (Vitest, mocks, exception testing), calls API, strips markdown from response. |
+| [server/.env.example](server/.env.example) | Example environment file for `GEMINI_API_KEY` and `PORT`. |
+| [client/index.html](client/index.html) | Single HTML entry for the Vite React app. |
+| [client/vite.config.js](client/vite.config.js) | Vite config; React plugin and proxy of `/api` to the Node backend. |
+| [client/src/main.jsx](client/src/main.jsx) | React root; mounts `App` with StrictMode. |
+| [client/src/App.jsx](client/src/App.jsx) | Main app: state, generate flow, wiring of input, button, output, and copy. |
+| [client/src/App.css](client/src/App.css) | Global and component styles for the single-page UI. |
+| [client/src/api/generateTests.js](client/src/api/generateTests.js) | HTTP client; `POST /api/generate-tests` with user code, returns result. |
+| [client/src/components/CodeInput.jsx](client/src/components/CodeInput.jsx) | Textarea for pasting the JavaScript/TypeScript function. |
+| [client/src/components/GenerateButton.jsx](client/src/components/GenerateButton.jsx) | Button to trigger test generation; shows loading state. |
+| [client/src/components/TestOutput.jsx](client/src/components/TestOutput.jsx) | Read-only area displaying generated test code or error message. |
+| [client/src/components/CopyButton.jsx](client/src/components/CopyButton.jsx) | Button to copy the generated test suite to the clipboard. |
+| [playwright.config.js](playwright.config.js) | Playwright E2E config; base URL, webServer for client. |
+| [e2e/generate-tests.spec.js](e2e/generate-tests.spec.js) | System test: navigate, paste function, generate, assert generated test code is visible. |
+
+**How to run:** Copy `server/.env.example` to `server/.env` and set `GEMINI_API_KEY`. From repo root run `npm run install:all`, then start the backend (`npm run dev:server`) and frontend (`npm run dev:client`) in two terminals. Open http://localhost:5173. For E2E: install browsers once with `npx playwright install`; with the backend already running, run `npm run test:e2e` (Playwright starts the client automatically).
