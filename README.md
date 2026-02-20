@@ -64,6 +64,8 @@ Web-Based SE Practice Tool — **Unit Test Generator**: paste a JavaScript/TypeS
 
 # Phase 2: Architecture
 
+**prompt path:** [ [chats/prompt for phase2](https://github.com/shiracrammer/SEmmn15/blob/main/chats/prompt%20for%20phase2)]
+
 ### 1. Overall Architecture
 
 The application uses a **client–server** model:
