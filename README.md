@@ -151,6 +151,9 @@ Full architecture details: [docs/phase2-architecture.md](docs/phase2-architectur
 
 ## Phase 3: Key Files
 
+**prompt path:** [ [chats/prompt for phase3](https://github.com/shiracrammer/SEmmn15/blob/main/chats/prompt%20for%20phase%203)]
+
+
 | File Name | Description |
 |-----------|-------------|
 | [server/index.js](server/index.js) | Express app entry point; CORS, JSON body, and `POST /api/generate-tests` route. |
