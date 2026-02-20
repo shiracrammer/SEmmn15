@@ -1,4 +1,5 @@
 import { generateTests as generateTestsService } from '../services/geminiService.js';
+import { validateSingleFunctionInput } from '../utils/validation.js';
 
 /**
  * POST /api/generate-tests
@@ -7,7 +8,13 @@ import { generateTests as generateTestsService } from '../services/geminiService
  */
 export async function postGenerateTests(req, res) {
   const { code } = req.body ?? {};
+  const validation = validateSingleFunctionInput(code);
+  if (!validation.valid) {
+    return res.status(400).json({ success: false, error: validation.error });
+  }
+
   const apiKey = process.env.GEMINI_API_KEY;
   const result = await generateTestsService(code, apiKey);
-  res.json(result);
+  const status = result.success ? 200 : 502;
+  return res.status(status).json(result);
 }

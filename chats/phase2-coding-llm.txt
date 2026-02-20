@@ -1,0 +1,26 @@
+### Phase 2: Architecture Prompt
+
+Technique used: Let the LLM explore and plan before generating the final output.
+
+**Copy & Paste this:**
+
+ Act as a Senior Software Architect. We are moving to "Phase 2: Architecture" for our Unit Test Generator web application.
+ 
+ 
+ **Context & Tech Stack:**
+ * Frontend: React.js (Vite).
+ * Backend: Node.js.
+ * Testing Framework for output: Vitest.
+ * **CRITICAL LLM ROLE:** We must use the Gemini API as our "Feature LLM" (Application LLM). This means our Node.js backend will send the user's code to Gemini, and Gemini will generate the actual unit test code.
+ 
+ 
+ 
+ 
+ **Your Task:**
+ First, think step-by-step and outline a plan for how the frontend, backend, and Gemini API will interact.
+ Once you have planned it, generate the official Architecture documentation section for our README. It must include the following specific sections:
+ 1. **Overall architecture:** A brief explanation of the client-server model used. 2. **Technology stack:** Listing React Vite, Node.js, and Vitest. 3. **Frontend/backend responsibilities:** What the React app does vs. what the Node server does. 4. **LLM integration model:** Specifically detailing how Node.js communicates with the Gemini API. 5. **Data flow:** Step-by-step flow from user input to the displayed test result. 6. **File structure:** A proposed tree structure for the project. 7. **Third-party libraries:** Any necessary packages (e.g., Axios, Google Generative AI SDK). 
+ 
+ 
+
+---

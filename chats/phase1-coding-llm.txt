@@ -1,0 +1,32 @@
+Based on the prompt engineering techniques from your course material, the key to getting great results is to be highly specific , use step-by-step instructions , and encourage the LLM to plan before writing code. We will also use the concept of a checklist for the coding phase to keep the LLM focused.
+
+Here are the upgraded, highly detailed prompts for your Coding LLM (like Cursor or Claude):
+
+### Phase 1: Requirements Engineering Prompt
+
+Technique used: Be specific and use step-by-step instructions.
+
+**Copy & Paste this:**
+
+ Act as an Expert Requirements Engineer. We are building a single-page web application for a university project.
+ 
+ 
+ **The Product:** A "Unit Test Generator". The problem is that developers often lack the time to write comprehensive tests. Our solution is an app where the user pastes a JavaScript/TypeScript function, and the application generates a complete test suite for it using Vitest. The generated tests must include standard cases, edge cases, partition testing, and guideline-based testing.
+ 
+ 
+ **Constraints:**
+ * The application must be single-page.
+ * It must run locally on localhost (no deployment).
+ * It must support English only.
+ 
+ 
+ **Your Task:**
+ Please generate the documentation for "Phase 1: Requirements Engineering".
+ Follow these steps exactly:
+ 1. Write a clear, bulleted list of Functional Requirements for this specific feature.
+ 2. Write a clear, bulleted list of Acceptance Criteria, ensuring they cover the UI interaction, the backend processing, and the output display.
+ 3. Keep the language concise and professional, without unnecessary storytelling.
+ 
+ 
+
+---
