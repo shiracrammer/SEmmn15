@@ -10,7 +10,7 @@ Web-Based SE Practice Tool — **Unit Test Generator**: paste a JavaScript/TypeS
 **Constraints:** Single-page application; runs locally on localhost; English only.
 
 **prompt path:** chats/prompt for phase1
-
+ [docs/phase2-architecture.md](docs/phase2-architecture.md).
 ---
 
 ## 1. Functional Requirements
