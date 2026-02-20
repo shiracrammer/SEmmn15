@@ -61,7 +61,7 @@ Web-Based SE Practice Tool — **Unit Test Generator**: paste a JavaScript/TypeS
 ---
 
 
-## Phase 2:Architecture
+# Phase 2: Architecture
 
 ### 1. Overall Architecture
 
