@@ -1,0 +1,34 @@
+### Phase 3: Coding & Testing Prompt
+
+Technique used: Use Checklists & Scratchpads to guide the LLM through a multi-step task without losing focus , and implement a Test/Code workflow.
+
+**Copy & Paste this:**
+
+ Act as a Full-Stack Developer and QA Automation Engineer. We are now in "Phase 3: Coding & Testing".
+ 
+ 
+ We need to build the Unit Test Generator (React Vite frontend, Node.js backend, Gemini API integration) and test it.
+ **Instructions - Follow this Checklist exactly:**
+ **Step 1: Backend Implementation**
+ Write clean, well-organized Node.js code for the backend API. Create an endpoint that accepts a code string, constructs a prompt asking to generate Vitest unit tests (instructing the inclusion of mock objects and exception testing via `assertThrows` or equivalent), and calls the Gemini API.
+ 
+ 
+ **Step 2: Frontend Implementation**
+ Write the React (Vite) code. Create a simple UI with a text area for input, a submit button, and a display area for the generated code. Ensure the code follows standard conventions.
+ 
+ 
+ **Step 3: README Documentation**
+ Create a markdown table with two columns: "File Name" (clickable links) and "Description". Only include the key files we just created.
+ 
+ 
+ **Step 4: System Testing (Playwright)**
+ Do NOT generate LLM interaction logs for this step. Write one meaningful automated system-level functional test using Playwright. The test must automate this real user flow:
+ 
+ 
+ * Navigate to the app.
+ * Paste a dummy JavaScript function into the input.
+ * Click the generate button.
+ * Wait for the API response.
+ * Assert that the generated test code is visible on the screen.
+ Add a brief comment block explaining what is tested and why it is a meaningful system test.
+ 
